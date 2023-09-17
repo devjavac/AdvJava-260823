@@ -13,13 +13,10 @@
 	String contact = request.getParameter("contact");
 	// int num = Integer.parseInt(stringvalue)
 %>
-
 <div align="center">
 	<h2>Name : <%= name %> </h2>
 	<h2>Email : <%= email %></h2>
 	<h2>Contact : <%= contact %> </h2>
 </div>
-
-
 </body>
 </html>
