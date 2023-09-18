@@ -17,9 +17,6 @@
 	<hr>
 	<h3>Address Details</h3>
 	<form action="Preview.jsp">
-		<input type="hidden" name="name" value="<%=name%>">
-		<input type="hidden" name="email" value="<%=email%>">
-		<input type="hidden" name="contact" value="<%=contact%>">
 		Enter City : <input type="text" name="city">
 		<br><br>
 		Enter Pincode : <input type="text" name="pincode">
@@ -27,6 +24,9 @@
 		Enter State : <input type="text" name="state">
 		<br><br>
 		<button type="submit">Preview</button>
+		<input type="hidden" name="name" value="<%=name%>">
+		<input type="hidden" name="email" value="<%=email%>">
+		<input type="hidden" name="contact" value="<%=contact%>">
 	</form>
 </div>
 </body>

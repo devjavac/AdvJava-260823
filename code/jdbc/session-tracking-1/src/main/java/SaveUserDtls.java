@@ -45,7 +45,20 @@ public class SaveUserDtls extends HttpServlet {
 		} catch(Exception ex) {
 			ex.printStackTrace();
 		}
+		
 		String status= count>0 ? "P" : "F";
+		
 		response.sendRedirect("PersonalDtls.jsp?s="+status);
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
