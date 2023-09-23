@@ -53,5 +53,4 @@ public class AuthUser extends HttpServlet {
 			response.sendRedirect("login.jsp?c=401");
 		}
 	}
-
 }

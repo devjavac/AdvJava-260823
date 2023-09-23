@@ -18,10 +18,13 @@
 				message = "Invalid User Name or password...";
 				color = "red";
 				break;
+			case "202":
+				message = "You have been Logged out successfully..";
+				color = "green";
+				break;
 		}
 	}
 %>
-
 	<div align="center">
 		<h1>User Sign-in Form</h1>
 		<h3 style="color:<%=color%>"><%=message%></h3>

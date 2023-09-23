@@ -10,7 +10,7 @@
 	<div align="right">
 		<h3>User, <%= session.getAttribute("name") %> </h3>
 		<h3>From, <%= session.getAttribute("city") %> </h3>
-		<h3><a href="#">Sign-Out</a></h3>
+		<h3><a href="logout">Sign-Out</a></h3>
 	</div>
 	<hr>
 	<h1>Welcome To Home Page...</h1>
