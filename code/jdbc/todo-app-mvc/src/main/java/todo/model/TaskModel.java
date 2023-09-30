@@ -3,7 +3,10 @@ package todo.model;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import todo.dto.TaskDto;
 
@@ -40,5 +43,32 @@ public class TaskModel {
 		}
 		return count;
 	}
+	
+	public List<TaskDto> getAll() {
+		ArrayList<TaskDto> tasks = new ArrayList<TaskDto>();
+		try {
+			Connection con = getConnection();
+			PreparedStatement stmt = con.prepareStatement("select * from task order by scheduledOn desc");
+			ResultSet rs = stmt.executeQuery();
+			while(rs.next()) {
+				TaskDto task = new TaskDto();
+				task.setId(rs.getInt("id"));
+				task.setTitle(rs.getString("title"));
+				task.setStatus(rs.getString("status"));
+				task.setScheduledOn(rs.getString("scheduledOn"));
+				task.setUpdatedOn(rs.getString("updatedOn"));
+				tasks.add(task);
+			}
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return tasks;
+	}
+	
+	
+	
+	
+	
 	
 }
