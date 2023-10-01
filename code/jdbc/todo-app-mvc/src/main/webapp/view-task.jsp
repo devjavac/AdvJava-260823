@@ -11,7 +11,6 @@
 <body>
 <%@ include file="menu.jsp" %>
 	<div align="center">
-		
 		<table border="1">
 			<thead>
 				<tr>
@@ -35,9 +34,8 @@
 						<td><%= task.getScheduledOn()%></td>
 						<td><%= task.getUpdatedOn()%></td>
 						<td><a href="#">Edit</a></td>
-						<td><a href="#">Delete</a></td>
+						<td><a href="delete-my-task?id=<%= task.getId()%>">Delete</a></td>
 					</tr>
-			
 			<%			
 					}
 				}

@@ -66,9 +66,36 @@ public class TaskModel {
 		return tasks;
 	}
 	
-	
+	public boolean deleteById(int id) {
+		boolean result = false;
+		try {
+			Connection con = getConnection();
+			PreparedStatement stmt = con.prepareStatement("DELETE FROM task WHERE id = ?");
+			stmt.setInt(1, id);
+			int count = stmt.executeUpdate();
+			result = count>0;
+			con.close();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
 	
 	
 	
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
