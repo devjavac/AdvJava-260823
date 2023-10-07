@@ -9,9 +9,7 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 public class InsertExpenses {
-
 	public static void main(String[] args) {
-		
 		List<ExpenseEntity> list = new ArrayList<ExpenseEntity>();
 		Scanner scan = new  Scanner(System.in);
 		for(int i = 1; i<=2; i++) {
@@ -29,20 +27,16 @@ public class InsertExpenses {
 		}
 		scan.close();
 		saveData(list);
-		
 	}
-	
 	public static void saveData(List<ExpenseEntity> list) {
 		Configuration cfg = new  Configuration();
-		cfg.configure("hbm-config-mysql.xml");
+		cfg.configure("hbm-config-oracle.xml");
 		SessionFactory sf = cfg.buildSessionFactory();
 		Session session = sf.openSession();
 		Transaction tr = session.beginTransaction();
-		
 		for(ExpenseEntity obj : list) {
 			session.save(obj);
 		}
-		
 		tr.commit();
 		session.close();
 		sf.close();

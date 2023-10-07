@@ -5,13 +5,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "expense")
 public class ExpenseEntity {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@SequenceGenerator(name = "stud_seq", initialValue = 1, allocationSize = 1) // Oracle
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "exp_seq") // Oracle
 	@Column(name = "eid")
 	private int id;
 	@Column(length = 100)
