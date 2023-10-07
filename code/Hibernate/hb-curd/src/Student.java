@@ -12,6 +12,8 @@ import javax.persistence.Transient;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+// SQL : SELECT studnm FROM studinfo
+// HQL : SELECT name FROM Student
 @Entity
 @Table(name = "studinfo")
 public class Student {

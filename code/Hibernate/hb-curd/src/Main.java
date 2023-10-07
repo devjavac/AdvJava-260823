@@ -13,13 +13,13 @@ public class Main {
 		
 		Student st = new Student();
 		st.setName("Test1");
-		st.setContact("9988112233");
+		st.setContact("9988112241");
 		st.setGender('F');
 		st.setDob(LocalDate.of(2003, 12, 13));
 		st.setStatus(true);
 		
-		//session.save(st); // Save return the auto generated value back to java program.  
-		session.persist(st); // persist method return void. wont get the generated value back.
+		session.save(st); // Save return the auto generated value back to java program.  
+		//session.persist(st); // persist method return void. wont get the generated value back.
 		
 		tr.commit();
 		session.close();
