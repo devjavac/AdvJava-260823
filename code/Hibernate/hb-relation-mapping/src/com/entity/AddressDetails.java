@@ -1,6 +1,7 @@
 package com.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,7 +22,7 @@ public class AddressDetails {
 	private String pincode;
 	private String state;
 	@JoinColumn(name = "sid")
-	@OneToOne
+	@OneToOne(fetch = FetchType.LAZY)
 	private StudentDetails studDetails;  // One Address To One StudentDetails
 	public int getAid() {
 		return aid;

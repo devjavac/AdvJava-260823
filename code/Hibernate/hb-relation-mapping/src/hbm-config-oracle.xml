@@ -13,6 +13,7 @@
 		<property name="show_sql">true</property>
 
 		<mapping class="com.entity.StudentDetails"/>
-		<mapping class="com.entity.AddressDetails"/>		
+		<mapping class="com.entity.AddressDetails"/>
+		<mapping class="com.entity.EducationDetails"/>		
 	</session-factory>
 </hibernate-configuration>
