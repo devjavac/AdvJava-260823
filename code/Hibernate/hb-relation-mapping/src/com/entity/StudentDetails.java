@@ -26,7 +26,7 @@ public class StudentDetails {
 	
 	// You can connect with another table without creating Foreign Key 
 	// In the mappedBy you must provide the reference variable name which is created for a foreign key column 
-	@OneToMany(mappedBy = "studDetails", fetch = FetchType.EAGER)   // One Student To Many Education
+	@OneToMany(mappedBy = "studDetails", fetch = FetchType.LAZY)   // One Student To Many Education
 	private List<EducationDetails> edus;
 
 	@OneToOne(mappedBy = "studDetails", fetch = FetchType.EAGER) 
